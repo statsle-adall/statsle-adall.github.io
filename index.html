@@ -66,7 +66,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2501.19054" target="_blank"
+                  <a href="https://arxiv.org/abs/2503.06213" target="_blank"
                     class="external-link button is-normal is-rounded">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -110,23 +110,10 @@
                   </span>
 
                   <span class="link-block">
-                    <a href="#gallery" class="nav-link button-55 is-normal">
-                      <span>Gallery</span>
+                    <a href="#results" class="nav-link button-55 is-normal">
+                      <span>Results</span>
                     </a>
                   </span>
-
-                  <span class="link-block">
-                    <a href="#comparisons" class="nav-link button-55 is-normal">
-                      <span>Comparisons</span>
-                    </a>
-                  </span>
-
-                  <span class="link-block">
-                    <a href="#diversity" class="nav-link button-55 is-normal">
-                      <span>Design Variants</span>
-                    </a>
-                  </span>
-
                 </div>
 
               </div>
@@ -153,14 +140,6 @@
       </div>
   </div>
 </section> -->
-
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <iframe allowFullScreen title="video" width="960" height="480" src="https://www.youtube.com/embed/LK8LAzR0v5M?si=FD1Vg9wjkROTKjDV"></iframe>
-    </div>
-  </section>
- 
-
   <!-- Abstract. -->
   <section class="section">
     <div class="container is-max-desktop">
@@ -169,18 +148,18 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-                Creating Computer-Aided Design (CAD) models requires significant expertise and effort. Text-to-CAD, which converts textual 
-                descriptions into CAD parametric sequences, is crucial in streamlining this process. Recent studies have utilized ground-
-                truth parametric sequences, known as sequential signals, as supervision to achieve this goal. However, CAD models are inherently 
-                multimodal, comprising parametric sequences and corresponding rendered visual objects. Besides,the rendering process from 
-                parametric sequences to visual objects is many-to-one. Therefore, both sequential and visual signals are critical for effective 
-                training. In this work, we introduce CADFusion, a framework that uses Large Language Models (LLMs) as the backbone and alternates 
-                between two training stages: the sequential learning (SL) stage and the visual feedback (VF) stage. In the SL stage, we train 
-                LLMs using ground-truth parametric sequences, enabling the generation of logically coherent parametric sequences. In the VF 
-                stage, we reward parametric sequences that render into visually preferred objects and penalize those that do not, allowing LLMs 
-                to learn how rendered visual objects are perceived and evaluated. These two stages alternate throughout the training, ensuring 
-                balanced learning and preserving benefits of both signals. Experiments demonstrate that CADFusion significantly improves 
-                performance, both qualitatively and quantitatively.
+              Lifelong learning (LL) aims to continuously acquire new knowledge while retaining previously learned knowledge. A 
+              central challenge in LL is the stability-plasticity dilemma, which requires models to balance the preservation of 
+              previous knowledge (stability) with the ability to learn new tasks (plasticity). While parameter-efficient fine-tuning 
+              (PEFT) has been widely adopted in large language models, its application to lifelong learning remains underexplored. 
+              To bridge this gap, this paper proposes AdaLL, an adapter-based framework designed to address the dilemma through 
+              a simple, universal, and effective strategy. AdaLL co-trains the backbone network and adapters under regularization 
+              constraints, enabling the backbone to capture task-invariant features while allowing the adapters to specialize 
+              in task-specific information. Unlike methods that freeze the backbone network, AdaLL incrementally enhances the 
+              backbone's capabilities across tasks while minimizing interference through backbone regularization. This architectural 
+              design significantly improves both stability and plasticity, effectively eliminating the stability-plasticity 
+              dilemma. Extensive experiments demonstrate that AdaLL consistently outperforms existing methods across various 
+              configurations, including dataset choices, task sequences, and task scales.
             </p>
           </div>
         </div>
@@ -206,24 +185,27 @@
       </div>
       <div class="columns is-centered has-text-centered">
         <div class="column has-text-centered">
-          <h4 class="title is-4">Approach Overview</h4>
-          <img src="static/images/method_1.png" />
+          <h4 class="title is-4">Method Overview</h4>
+          <img src="static/images/adall.png" />
           <div class="content has-text-justified">
-            We iteratively fine-tune an LLM backbone with Sequential and Visual Feedback. The former optimizes 
-            the model by cross-entropy loss on instructions and ground-truths, and the latter optimizes the model 
-            by computing the DPO loss on preferred and rejected CAD objects determined by their visual appearance.
+            Existing methods contribute to incremental learning in various ways: (a) classic Regularization-based methods, such as LwF and
+            EWC, introduce regularization constraints to preserve knowledge from previous tasks; (b) Submodule-based approaches, for instance
+            InfLoRA and SideTuning, integrate additional components such as MLPs and LoRA into the backbone network; and (c) Prompt tuning
+            methods (DualPrompt, CodaPrompt, etc.) introduces task-specific prefixes to the key and value in attention modules for task-specific 
+            performance. We anticipate a novel framework (d) that uses submodules in a way that it can be benefited from regularization and 
+            other backbone-specific algorithms to ensure a better response to the stability-plasticity dilemma, i.e. a universal solution.
           </div>
         </div>
       </div>
       <div class="is-max-desktop columns is-centered has-text-centered">
         <div class="column has-text-centered">
-          <h4 class="title is-4">Visual Preference Collection<h4>
-              <img src="static/images/method_2.png" />
+          <h4 class="title is-4">AdaLL Introduction<h4>
+              <img src="static/images/model_structure.png" />
               <div class="content has-text-justified">
-                We deploy an LVM to produce visual preferences. Specifically, for each instruction, we generate several 
-                CAD sequences and render them into images. The LVM then scores these images based on criteria such as 
-                component quality, quantity, and distribution. Finally, we form preference pairs from eligible objects as 
-                the visual feedback data.
+                We deploy an adapter that consists of the down-projection, the nonlinear transformation, up-projection, and skip-connection 
+                between the feature exactor and the classifier head. The key difference between traditional use of adapter and ours is that 
+                we co-train adapter with the entire network when learning a new task, in which way we add constraints to ensure that the 
+                backbone keeps the task-invariant information and adapters learn the task-specific information.
               </div>
         </div>
       </div>
@@ -232,7 +214,7 @@
 
   <!--Gallery-->
   <section class="section">
-    <div class="container is-four-fifths" id="gallery">
+    <div class="container is-four-fifths" id="results">
       <div class="link-block ">
         <a href="#top" class="nav-link button-55 is-normal">
           <span>Go to Top</span>
@@ -244,14 +226,14 @@
         </a>
       </div> -->
       <div class="section-title has-text-centered is-centered">
-        <h2 class="title is-3">Gallery</h2><br>
+        <h2 class="title is-3">Results</h2><br>
       </div>
       <div class="column is-max-desktop is-centered has-text-centered">
         <div class="column has-text-centered">
             <div class="content is-centered has-text-justified">
                 For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
             </div>
-          <img src="static/images/gallary_2.png" />
+          <img src="static/univ_1.png" />
         </div>
       </div>
     </div>
@@ -266,7 +248,7 @@
         </a>
       </div>
       <div class="section-title has-text-centered is-centered">
-        <h2 class="title is-3">Comparison to Prior Works (Quantitative)</h2><br>
+        <h2 class="title is-3">Results</h2><br>
       </div>
       <div class="column is-max-desktop is-centered has-text-centered">
         <div class="column has-text-centered">
@@ -296,106 +278,34 @@
             
             <table>
                 <tr class="thick-line-top">
-                    <th>Method</th>
-                    <th>F1 (Sketch) &uarr;</th>
-                    <th>F1 (Extrusion) &uarr;</th>
-                    <th>CD &darr;</th>
-                    <th>COV &uarr;</th>
-                    <th>MMD &darr;</th>
-                    <th>JSD &darr;</th>
-                    <th>IR &darr;</th>
-                    <th>LVM Score &uarr;</th>
-                    <th>Avg. Rank &darr;</th>
+                    <th>Method Name</th>
+                    <th>Average Task Accuracy&uarr;</th>
+                    <th>Final Task Accuracy&uarr;</th>
                 </tr>
                 <tr class="thick-line-top">
-                    <td><strong>GPT-4o</strong></td>
-                    <td>82.96</td>
-                    <td>85.72</td>
-                    <td>85.04</td>
-                    <td>72.40</td>
-                    <td>6.60</td>
-                    <td>37.93</td>
-                    <td>74.26</td>
-                    <td>5.13</td>
-                    <td>3.22</td>
+                    <td><i>ResNet backbones</i></td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
                 <tr>
-                    <td><strong>Text2CAD</strong></td>
-                    <td>63.94</td>
-                    <td>92.13</td>
-                    <td><strong>30.23</strong></td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td><strong>3.37</strong></td>
-                    <td>2.01</td>
-                    <td>2.97</td>
+                  <td><strong>   EWC</strong></td>
+                  <td>54.8</td>
+                  <td>50.8</td>
+                </tr>
+                <tr>
+                  <td><strong>   EWC</strong></td>
+                  <td>54.8</td>
+                  <td>50.8</td>
                 </tr>
                 <tr class="thick-line-bottom">
-                    <td><strong>CADFusion</strong></td>
-                    <td><strong>85.22</strong></td>
-                    <td><strong>92.79</strong></td>
-                    <td>45.67</td>
-                    <td><strong>90.40</strong></td>
-                    <td><strong>3.49</strong></td>
-                    <td><strong>17.11</strong></td>
-                    <td>6.20</td>
-                    <td><strong>8.96</strong></td>
-                    <td><strong>1.86</strong></td>
+                  <td><strong>   EWC</strong></td>
+                  <td>54.8</td>
+                  <td>50.8</td>
                 </tr>
                 <!-- <tr class="thick-line-bottom">
                     <td colspan="10"></td>
                 </tr> -->
             </table>
-            
-            
-            
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Comparisons -->
-  <section class="section">
-    <div class="container is-four-fifths">
-      <!-- <div class="link-block ">
-        <a href="#top" class="nav-link button-55 is-normal">
-          <span>Go to Top</span>
-        </a>
-      </div> -->
-      <div class="section-title has-text-centered is-centered">
-        <h2 class="title is-3">Comparison to Prior Works (Qualitative)</h2><br>
-      </div>
-      <div class="column is-max-desktop is-centered has-text-centered">
-        <div class="column has-text-centered">
-          <img src="static/images/comparisons.png" />
-        </div>
-      </div>
-      
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-four-fifths" id="diversity">
-      <div class="link-block ">
-        <a href="#top" class="nav-link button-55 is-normal">
-          <span>Go to Top</span>
-        </a>
-      </div>
-      <div class="section-title has-text-centered is-centered">
-        <h2 class="title is-3">Design Variations</h2><br>
-      </div>
-      <div class="column is-centered has-text-centered">
-        <div class="column has-text-centered">
-            <div class="content has-text-justified">
-              CADFusion is able to generate correct but varying CAD objects.
-              Top-left: ground-truth; top-right, bottom-left, and bottom-right: CADFusion generations.
-            </div>
-          <img src="static/images/diversity.png" />
         </div>
       </div>
     </div>
@@ -423,26 +333,6 @@
       </div>
     </div>
   </footer>
-  <footer>
-    <div class="ms_footer">
-        <p>
-            <a target="_blank" aria-label="Privacy & Cookies"
-                href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy &amp; Cookies</a>
-            <span class="line">|</span>
-            <a target="_blank" aria-label="Consumer Health Privacy"
-                href="https://go.microsoft.com/fwlink/?linkid=2259814">Consumer Health Privacy</a>
-            <span class="line">|</span>
-            <a target="_blank" aria-label="Trademarks" href="https://www.microsoft.com/trademarks">Trademarks</a>
-            <span class="line">|</span>
-            <a target="_blank" aria-label="Terms of Use" href="https://go.microsoft.com/fwlink/?LinkID=206977">Terms
-                of Use</a>
-            <span style="margin-left:1em;">© Microsoft 2024</span>
-        </p>
-        <p>
-            <span> <a target="_blank" href="https://www.microsoft.com/" style="color: #000;">1</a></span>
-        </p>
-    </div>
-</footer>
 <style type="text/css">
   .ms_footer {
       background: #000;
