@@ -44,7 +44,7 @@
       <div class="container is-max-desktop" id="top">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Text-to-CAD Generation Through Infusing Visual Feedback in Large Language Models</h1>
+            <h1 class="title is-1 publication-title">Lifelong Learning with Task-Specific Adaptation: Addressing the Stability-Plasticity Dilemma</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block"><a href="https://www.cs.toronto.edu/~rwang/" target="_blank"> Ruiyu Wang</a><sup>1</sup>,</span>
               <span class="author-block"><a href="https://sites.google.com/site/senwang1312home/" target="_blank">Sen Wang</a><sup>2</sup>,</span>
@@ -343,12 +343,14 @@
         </a>
       </div> -->
       <div class="section-title has-text-centered is-centered">
-        <h2 class="title is-3">Results</h2><br>
+        <h2 class="title is-3">Results on Universality</h2><br>
       </div>
       <div class="column is-max-desktop is-centered has-text-centered">
         <div class="column has-text-centered">
             <div class="content is-centered has-text-justified">
-                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
+                Our framework improves the performance of different regularizations on different task orderings, task scales and datasets, demonstrating universality.
+
+                The following figure: models' performance on CIFAR-100 with different kinds of regularizations and orderings (the alphabetical order, the iCaRL order, and the coarse order based on task metadata).
             </div>
           <img src="static/univ_1.png" />
         </div>
@@ -356,7 +358,7 @@
       <div class="column is-max-desktop is-centered has-text-centered">
         <div class="column has-text-centered">
             <div class="content is-centered has-text-justified">
-                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
+                Models' performance on CIFAR-100 with different kinds of regularizations and task scales (5, 10, 20 classes for each task).
             </div>
           <img src="static/univ_2.png" />
         </div>
@@ -364,69 +366,13 @@
       <div class="column is-max-desktop is-centered has-text-centered">
         <div class="column has-text-centered">
             <div class="content is-centered has-text-justified">
-                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
+              Models' performance on CIFAR-100 with different kinds of regularizations on ImageNet-subset (The first 100 classes).
             </div>
           <img src="static/univ_3.png" />
         </div>
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="container is-four-fifths" id="results-univ">
-      <div class="link-block ">
-        <a href="#top" class="nav-link button-55 is-normal">
-          <span>Go to Top</span>
-        </a>
-      </div>
-      <!-- <div class="link-block ">
-        <a href="more.html" class="nav-link button-55 is-normal">
-          <span>More</span>
-        </a>
-      </div> -->
-      <div class="section-title has-text-centered is-centered">
-        <h2 class="title is-3">Results</h2><br>
-      </div>
-      <div class="column is-max-desktop is-centered has-text-centered">
-        <div class="column has-text-centered">
-            <div class="content is-centered has-text-justified">
-                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
-            </div>
-          <img src="static/univ_2.png" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-four-fifths" id="results-univ">
-      <div class="link-block ">
-        <a href="#top" class="nav-link button-55 is-normal">
-          <span>Go to Top</span>
-        </a>
-      </div>
-      <!-- <div class="link-block ">
-        <a href="more.html" class="nav-link button-55 is-normal">
-          <span>More</span>
-        </a>
-      </div> -->
-      <div class="section-title has-text-centered is-centered">
-        <h2 class="title is-3">Results</h2><br>
-      </div>
-      <div class="column is-max-desktop is-centered has-text-centered">
-        <div class="column has-text-centered">
-            <div class="content is-centered has-text-justified">
-                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
-            </div>
-          <img src="static/univ_3.png" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  
-
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
