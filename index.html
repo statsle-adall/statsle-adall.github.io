@@ -105,13 +105,19 @@
 
                   <span class="link-block">
                     <a href="#method" class="nav-link button-55 is-normal">
-                        <span>Method</span>
+                        <span>Methodology</span>
                     </a>
                   </span>
 
                   <span class="link-block">
-                    <a href="#results" class="nav-link button-55 is-normal">
-                      <span>Results</span>
+                    <a href="#results-effi" class="nav-link button-55 is-normal">
+                      <span>Results (Efficacy)</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="#results-univ" class="nav-link button-55 is-normal">
+                      <span>Results (Universality)</span>
                     </a>
                   </span>
                 </div>
@@ -141,7 +147,7 @@
   </div>
 </section> -->
   <!-- Abstract. -->
-  <section class="section">
+  <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -169,7 +175,7 @@
 
 
   <!-- How does it work? -->
-  <section class="section is-light">
+  <section class="section">
     <div class="container is-widescreen" id="method">
       <!-- <div class="link-block ">
         <a href="#top" class="nav-link button-55 is-normal">
@@ -178,7 +184,7 @@
       </div> -->
     </div>
   </section>
-  <section class="section hero is-light">
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="section-title has-text-centered is-centered">
         <h2 class="title is-3">Methodology</h2><br>
@@ -212,36 +218,8 @@
     </div>
   </section>
 
-  <!--Gallery-->
-  <section class="section">
-    <div class="container is-four-fifths" id="results">
-      <div class="link-block ">
-        <a href="#top" class="nav-link button-55 is-normal">
-          <span>Go to Top</span>
-        </a>
-      </div>
-      <!-- <div class="link-block ">
-        <a href="more.html" class="nav-link button-55 is-normal">
-          <span>More</span>
-        </a>
-      </div> -->
-      <div class="section-title has-text-centered is-centered">
-        <h2 class="title is-3">Results</h2><br>
-      </div>
-      <div class="column is-max-desktop is-centered has-text-centered">
-        <div class="column has-text-centered">
-            <div class="content is-centered has-text-justified">
-                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
-            </div>
-          <img src="static/univ_1.png" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
   <section class="section hero is-light">
-    <div class="container is-widescreen" id="comparisons">
+    <div class="container is-widescreen" id="results-effi">
       <div class="link-block ">
         <a href="#top" class="nav-link button-55 is-normal">
           <span>Go to Top</span>
@@ -294,58 +272,53 @@
                 </tr>
                 <tr>
                   <td><strong>   EWC-A</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td>55.6</td>
+                  <td>52.7</td>
                 </tr>
                 <tr>
                   <td><strong>   LwF</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td>70.9</td>
+                  <td>71.5</td>
                 </tr>
                 <tr>
                   <td><strong>   LwF-A</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td>73.8</td>
+                  <td>72.3</td>
                 </tr>
                 <tr>
                   <td><strong>   iTAML</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td>79.0</td>
+                  <td>80.5</td>
                 </tr>
                 <tr>
                   <td><strong>   iTAML-A</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td>84.1</td>
+                  <td>80.6</td>
                 </tr>
                 <tr>
-                  <td><strong>   EWC-A</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td><i>ViT backbones</i></td>
+                  <td> </td>
+                  <td> </td>
                 </tr>
                 <tr>
-                  <td><strong>   EWC-A</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td><strong>   DualPrompt</strong></td>
+                  <td>88.2/td>
+                  <td>86.3</td>
                 </tr>
                 <tr>
-                  <td><strong>   EWC-A</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td><strong>   DualPrompt-A</strong></td>
+                  <td>89.3</td>
+                  <td>87.9</td>
                 </tr>
                 <tr>
-                  <td><strong>   EWC-A</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
-                </tr>
-                <tr>
-                  <td><strong>   EWC-A</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td><strong>   InfLoRA</strong></td>
+                  <td>91.6</td>
+                  <td>86.7</td>
                 </tr>
                 <tr class="thick-line-bottom">
-                  <td><strong>   EWC</strong></td>
-                  <td>54.8</td>
-                  <td>50.8</td>
+                  <td><strong>   LwF-A</strong></td>
+                  <td>90.9</td>
+                  <td>86.4</td>
                 </tr>
                 <!-- <tr class="thick-line-bottom">
                     <td colspan="10"></td>
@@ -355,6 +328,88 @@
       </div>
     </div>
   </section>
+
+  <!--Gallery-->
+  <section class="section">
+    <div class="container is-four-fifths" id="results-univ">
+      <div class="link-block ">
+        <a href="#top" class="nav-link button-55 is-normal">
+          <span>Go to Top</span>
+        </a>
+      </div>
+      <!-- <div class="link-block ">
+        <a href="more.html" class="nav-link button-55 is-normal">
+          <span>More</span>
+        </a>
+      </div> -->
+      <div class="section-title has-text-centered is-centered">
+        <h2 class="title is-3">Results</h2><br>
+      </div>
+      <div class="column is-max-desktop is-centered has-text-centered">
+        <div class="column has-text-centered">
+            <div class="content is-centered has-text-justified">
+                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
+            </div>
+          <img src="static/univ_1.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-four-fifths" id="results-univ">
+      <div class="link-block ">
+        <a href="#top" class="nav-link button-55 is-normal">
+          <span>Go to Top</span>
+        </a>
+      </div>
+      <!-- <div class="link-block ">
+        <a href="more.html" class="nav-link button-55 is-normal">
+          <span>More</span>
+        </a>
+      </div> -->
+      <div class="section-title has-text-centered is-centered">
+        <h2 class="title is-3">Results</h2><br>
+      </div>
+      <div class="column is-max-desktop is-centered has-text-centered">
+        <div class="column has-text-centered">
+            <div class="content is-centered has-text-justified">
+                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
+            </div>
+          <img src="static/univ_2.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-four-fifths" id="results-univ">
+      <div class="link-block ">
+        <a href="#top" class="nav-link button-55 is-normal">
+          <span>Go to Top</span>
+        </a>
+      </div>
+      <!-- <div class="link-block ">
+        <a href="more.html" class="nav-link button-55 is-normal">
+          <span>More</span>
+        </a>
+      </div> -->
+      <div class="section-title has-text-centered is-centered">
+        <h2 class="title is-3">Results</h2><br>
+      </div>
+      <div class="column is-max-desktop is-centered has-text-centered">
+        <div class="column has-text-centered">
+            <div class="content is-centered has-text-justified">
+                For each item in the gallery: Left: ground-truth; right: CADFusion generation; botton: textual instruction.
+            </div>
+          <img src="static/univ_3.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  
 
   <footer class="footer">
     <div class="container">
